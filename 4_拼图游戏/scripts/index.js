@@ -64,7 +64,7 @@ function Game(config){
     this.over = function(){
         this.hideBlock.dom.style.display = 'block'
         this.blocks.forEach(function(block){
-            dom.style.border = 'none';
+            block.dom.style.border = 'none';
         }).bind(this)
     }
 
@@ -175,4 +175,5 @@ function Game(config){
         this.initBlocks();
     }
     this.init()
+
 }
