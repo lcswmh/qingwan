@@ -3,14 +3,74 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>拼图游戏</title>
+    <title>拼图游戏 - 带参考图</title>
+    <style>
+        body {
+            display: flex;            /* 启用弹性盒布局，让子元素横向排列 */
+            justify-content: center;  /* 水平居中 */
+            align-items: center;      /* 交叉轴（垂直）居中所有子元素 */
+            min-height: 100vh;        /* 最小高度为整个视口高度，保证内容区域至少铺满一屏 */
+            gap: 40px;                /* 弹性项之间的间隔为 40 像素 */
+            background: #f0f0f0;    /* 页面背景色为浅灰色 */
+            font-family: sans-serif;  /* 使用无衬线字体作为默认字体 */
+            flex-wrap: wrap;          /* 允许弹性项换行，当空间不足时自动折行 */
+            padding: 20px;            /* 内边距 20 像素，让内容不紧贴边缘 */
+        }
+
+        .game-wrapper {
+            display: flex;                /* 弹性盒，便于内部纵向排列 */
+            flex-direction: column;       /* 主轴方向为垂直，子元素从上到下排列 */
+            align-items: center;          /* 水平居中对齐子元素（如游戏区和说明文字） */
+        }
+
+        #game {
+            border: 2px solid #333;       /* 深灰色实线边框，宽 2px */
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2); /* 添加阴影，增加立体感 */
+            margin-bottom: 10px;          /* 底部外边距 10px，与下方说明文字拉开距离 */
+        }
+
+        .reference {
+            text-align: center;           /* 内部文本和图片块水平居中 */
+        }
+
+        .reference img {
+            width: 300px;                 /* 固定参考图宽度为 300 像素 */
+            border: 2px solid #999;       /* 灰色边框 */
+            border-radius: 8px;           /* 圆角边框，视觉更柔和 */
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* 轻微阴影，与背景区分 */
+        }
+
+        .caption {
+            margin-top: 8px;              /* 顶部外边距 8px，与上方元素保持间距 */
+            color: #555;                  /* 文字颜色为中灰色 */
+            font-size: 14px;              /* 字体大小 14 像素 */
+        }
+        #shurukuang input {
+            display: block;
+            width: 100px;
+            margin: 5px auto;
+        }
+        #shurukuang #tupian{
+            width: 70px;
+        }
+    </style>
 </head>
 <body>
-    <div id="game"></div>
-    <script src="scripts/index.js"></script>
+    <div class="game-wrapper">
+        <div id="game"></div>
+        <p class="caption">点击方块移动，拼出完整图片</p>
+    </div>
+
+    <div class="reference">
+        <div id="shurukuang">
+            <input id="hang" type="text" placeholder="要挑战得行">
+            <input id="lie" type="text" placeholder="要挑战得列">
+            <input id="tupian" type="file" accept="imag e/*">   
+            <button id="startBtn">开始新游戏</button>
+        </div>
+        <img src="imgs/QQ图片20251217142130.jpg" alt="完整参考图">
+        <p class="caption">完整参考图</p>
+    </div>
+    <script src="./scripts/index-rewrite.js"></script>
 </body>
-
 </html>
-
-
-
