@@ -248,11 +248,13 @@ function startNewGame() {
     if (refImg) {
         refImg.src = imgUrl;
     }
-
+    // 计算适合屏幕的尺寸：最大800，如果屏幕太窄就用屏幕宽度的90%
+    var gameSize = Math.min(800, Math.floor(window.innerWidth * 0.9));
+    
     // 创建新游戏
     new Game({
-        width: 800,
-        height: 800,
+        width: gameSize,
+        height: gameSize,
         rows: hang,
         cols: lie,
         inmgUrl: imgUrl,
