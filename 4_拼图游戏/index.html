@@ -9,9 +9,8 @@
             display: flex;            /* 启用弹性盒布局，让子元素横向排列 */
             justify-content: center;  /* 水平居中 */
             align-items: center;      /* 交叉轴（垂直）居中所有子元素 */
-            min-height: 100vh;        /* 最小高度为整个视口高度，保证内容区域至少铺满一屏 */
-            min-height: 100dvh;            /* 新增 */
-            min-height: -webkit-fill-available; /* 新增 */
+            max-width: 100%;   /* 加上这一行，原本的 width:300px 依然有效 */
+            height: auto;
             gap: 40px;                /* 弹性项之间的间隔为 40 像素 */
             background: #f0f0f0;    /* 页面背景色为浅灰色 */
             font-family: sans-serif;  /* 使用无衬线字体作为默认字体 */
